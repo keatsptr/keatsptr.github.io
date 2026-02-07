@@ -1,0 +1,881 @@
+{
+  "schema_version": "1.0",
+  "source": "BETK Master Data",
+  "propertySets": [
+    {
+      "name": "FI_Kiinteistö",
+      "properties": [
+        {
+          "description": "",
+          "example": "ManseBIM Esimerkkikiinteistö",
+          "name": "KiinteistönNimi",
+          "teklaSource": "USERDEFINED.S_ESTATE_NAME"
+        },
+        {
+          "description": "Vaihtoehtoisesti 133-875-0005-0001",
+          "example": "133-875-5-1",
+          "name": "Kiinteistötunnus",
+          "teklaSource": "USERDEFINED.S_ESTATE_CODE"
+        },
+        {
+          "description": "Kiinteistörekisterin määräalatunnus, jos sellainen on olemassa.",
+          "example": "M601",
+          "name": "Määräala",
+          "teklaSource": "USERDEFINED.S_SUBDIVISION_CODE"
+        },
+        {
+          "description": "",
+          "example": "Hakametsänkatu 1",
+          "name": "Katuosoite",
+          "teklaSource": "USERDEFINED.S_STREET_ADDRESS"
+        },
+        {
+          "description": "",
+          "example": "33101",
+          "name": "Postinumero",
+          "teklaSource": "USERDEFINED.S_POSTAL_CODE"
+        },
+        {
+          "description": "",
+          "example": "Tampere",
+          "name": "Postitoimipaikka",
+          "teklaSource": "USERDEFINED.S_POSTAL_CODE_AREA"
+        },
+        {
+          "description": "Sijaintitieto - kunnan nimi",
+          "example": "Tampere",
+          "name": "KunnanNimi",
+          "teklaSource": "USERDEFINED.S_MUNICIPALITY"
+        },
+        {
+          "description": "Sijaintitieto - kunnan osa, kylä tai muu aluenumero",
+          "example": "Kissanmaa",
+          "name": "KunnanosaTaiKylä",
+          "teklaSource": "USERDEFINED.S_ESTATE_AREA_NAME"
+        },
+        {
+          "description": "Sijaintitieto - kortteli, talo tai muu ryhmäosa",
+          "example": "",
+          "name": "KorttelinTaiTalonNimi",
+          "teklaSource": "USERDEFINED.S_ESTATE_GRP_NAME"
+        },
+        {
+          "description": "Sijaintitieto - tontti, tila tai muu yksikkö",
+          "example": "",
+          "name": "TontinTaiTilanNimi",
+          "teklaSource": "USERDEFINED.S_ESTATE_UNIT"
+        },
+        {
+          "description": "Ei taida olla tarvetta RAK-malleissa?",
+          "example": "nro XXXX",
+          "name": "Kaavatunnus",
+          "teklaSource": "USERDEFINED.S_LAND_USE_CODE"
+        },
+        {
+          "description": "",
+          "example": "01 - Asemakaava",
+          "name": "Kaavatilanne",
+          "teklaSource": "USERDEFINED.S_LAND_USE_PLAN"
+        },
+        {
+          "description": "",
+          "example": "1 - Oma",
+          "name": "Hallintaperuste",
+          "teklaSource": "USERDEFINED.S_POSSESSION"
+        }
+      ]
+    },
+    {
+      "name": "FI_Kohde",
+      "properties": [
+        {
+          "description": "Viranomaisille toimitettava malli on suunnitelmamalli tai toteumamalli.",
+          "example": "[Ei asetettu | True | False]",
+          "name": "Toteumamalli",
+          "teklaSource": "USERDEFINED.B_AS-BUILT_MODEL"
+        },
+        {
+          "description": "Rakennusluvan ARK-mallissa pääsuunnittelija? Muilla suunnittelualoilla vastaava.",
+          "example": "Etunimi Sukunimi, Tutkinto?",
+          "name": "VastaavaSuunnittelija",
+          "teklaSource": "USERDEFINED.B_RESPONS_PERSON"
+        },
+        {
+          "description": "",
+          "example": "Yrityksen nimi",
+          "name": "Suunnittelutoimisto",
+          "teklaSource": "USERDEFINED.B_COMPANY"
+        },
+        {
+          "description": "",
+          "example": "RAK",
+          "name": "Suunnitteluala",
+          "teklaSource": "USERDEFINED.B_DISCIPLINE"
+        },
+        {
+          "description": "",
+          "example": "01 - Uusi rakennus tai rakennelma",
+          "name": "Rakentamistoimenpide",
+          "teklaSource": "USERDEFINED.B_CONSTR_ACTION"
+        },
+        {
+          "description": "Onko tällainen tarpeellinen? Oli RAVA3Pro-tieto.",
+          "example": "",
+          "name": "Rakennustunnus (lupatunnus, yms. \"väliaikainen\")",
+          "teklaSource": "USERDEFINED.BUILDING_CODE"
+        },
+        {
+          "description": "Pysyvä rakennustunnus, toteuma- ja muutos-, mutta ei lupavaiheessa.",
+          "example": "",
+          "name": "Rakennustunnus",
+          "teklaSource": "USERDEFINED.B_PERMANENT_CODE"
+        },
+        {
+          "description": "Rakennuksen paloluokka",
+          "example": "01 - P1",
+          "name": "Paloluokka",
+          "teklaSource": "USERDEFINED.B_FIRE_CLASS"
+        },
+        {
+          "description": "",
+          "example": "Rakennuksen nimi",
+          "name": "Nimi",
+          "teklaSource": "USERDEFINED.B_NAME"
+        },
+        {
+          "description": "Rakennuksella voi olla eri katuosoite kuin kiinteistöllä. Samalla kiinteistöllä voi olla rakennuksia eri katuosoitteilla.",
+          "example": "Hakametsänkuja 2",
+          "name": "Katuosoite",
+          "teklaSource": "USERDEFINED.B_STREET_ADDRESS"
+        },
+        {
+          "description": "",
+          "example": "33101 Tampere",
+          "name": "Postitoimipaikka",
+          "teklaSource": "USERDEFIEND.B_POSTAL_CODE"
+        }
+      ]
+    },
+    {
+      "name": "BETK-Tunnistetiedot ja luokittelu",
+      "properties": [
+        {
+          "description": "GUID (Global Unique Identifier) on tunnistetieto, joka on yksilöllinen myös eri projektien/mallien välillä. GUID:lla on pitkä ja lyhyt esitystapa. Vaikka IFC-mallissa käytetään lyhyttä esitystapaa, voi suunnittelijan mallinnusohjelma käyttää pitkää.",
+          "example": "ccb1c15e-3f7d-49e6-afee-38fe58ad7217",
+          "name": "GUID",
+          "teklaSource": "GUID"
+        },
+        {
+          "description": "GUID:n 22-merkkinen esitystapa.",
+          "example": "3CiS5UFtr9vg$kEFvOhN8N",
+          "name": "GUID, IFC",
+          "teklaSource": "CUSTOM.IFC_GUID"
+        },
+        {
+          "description": "",
+          "example": "301",
+          "name": "Luokka",
+          "teklaSource": "CUSTOM.CLASS_ATTR"
+        },
+        {
+          "description": "",
+          "example": "BETONIELEMENTTI",
+          "name": "Kokoonpanon tyyppi",
+          "teklaSource": "CUSTOM.ASSEMBLY_TYPE"
+        },
+        {
+          "description": "",
+          "example": "RUUTUELEMENTTI",
+          "name": "Nimi",
+          "teklaSource": "ASSEMBLY_NAME"
+        },
+        {
+          "description": "Betonirakenteilla tämä on Tekla Structuresissa natiivipääosan ominaisuus. Tämä attribuutti täytettävissä kaikille kokoonpanoille.",
+          "example": "",
+          "name": "Valmistuspaikka",
+          "teklaSource": "MANUFACTURED_AT"
+        },
+        {
+          "description": "Tunnuksen muodostamiseksi on BEC-ohjeistuksessa erilaisia vaihtoehtoja.",
+          "example": "V-1001",
+          "name": "Tunnus",
+          "teklaSource": "CUSTOM.ELEMENT_POS"
+        },
+        {
+          "description": "Ontelo- tai kuorielementin tunnus. CUSTOM.ELEMENT_POS palauttaa tämän ontelo- ja kuorilaatoille.",
+          "example": "",
+          "name": "Elementtitunnus",
+          "teklaSource": "CUSTOM.SLAB_CAST_UNIT_POS"
+        },
+        {
+          "description": "Tekla Structuresin numerointi muodostaa tunnuksen tästä etuliitteestä ja numerointialgoritmin etsimästä sarjanumerosta. Etuliitteen ja sarjanumeron muodostama teksti on sama keskenään samanlaisille objekteille.",
+          "example": "V",
+          "name": "Numeroinnin etuliite",
+          "teklaSource": "ASSEMBLY_PREFIX"
+        },
+        {
+          "description": "Tekla Structuresin numerointi etsii mallista keskenään samanlaisia objekteja ja antaa niille saman tunnuksen. Numeerista ACN-attribuuttia on käytetty saamaan aikaiseksi yksilöllinen tunnus betonielementeille. Juokseva numero on useimmiten lisätty osaksi Elementtitunnusta.",
+          "example": "123",
+          "name": "Juokseva numero",
+          "teklaSource": "ACN"
+        },
+        {
+          "description": "Elementtipiirustuksen numero ei välttämättä ole sama kuin elementtitunnus, eikä välttämättä sisällä elementtitunnusta. Piirustuksessa voi olla luettelo elementtitunnuksista, jotka piirustuksella valmistetaan.",
+          "example": "V-1001",
+          "name": "Piirustusnumero",
+          "teklaSource": "ASSEMBLY_POS / CAST_UNIT_POS"
+        },
+        {
+          "description": "Korjausrakentamisen tieto. Uudiskohteessa ei välttämättä tarvita.",
+          "example": "UUSI",
+          "name": "Korjausstatus",
+          "teklaSource": "RENOV_STATUS"
+        },
+        {
+          "description": "Jos korjausstatus lisätään malliin Status tool:lla, samalla kokoon panon näyttämisellä täytetään tämäkin tieto.",
+          "example": "16.5.2025",
+          "name": "Korjausstatus, päiväys",
+          "teklaSource": "RENOV_STATUS_DATE"
+        },
+        {
+          "description": "Korjausstatukseen liittyvä selite.",
+          "example": "",
+          "name": "Korjausstatus, kommentti",
+          "teklaSource": "RENOV_COMMENT"
+        },
+        {
+          "description": "Pääkokoonpanon, esimerkiksi teräsristikon tai betonielementin hierarkiataso on 0, alikomponenteilla suurempi.",
+          "example": "0",
+          "name": "Hierarkiataso",
+          "teklaSource": "HIERARCHY_LEVEL"
+        },
+        {
+          "description": "REI (R=kantavuus, E=tiiveys, I=eristävyys) luokka ilmoittaa kestävyysvaatimuksen minuutteina.",
+          "example": "R90",
+          "name": "Rakennusosan paloluokka",
+          "teklaSource": "R_FIRE_CLASS"
+        },
+        {
+          "description": "",
+          "example": "",
+          "name": "Seuraamusluokka",
+          "teklaSource": ""
+        },
+        {
+          "description": "",
+          "example": "",
+          "name": "Seuraamusluokka, selite",
+          "teklaSource": ""
+        },
+        {
+          "description": "",
+          "example": "",
+          "name": "Luotettavuusluokka",
+          "teklaSource": ""
+        },
+        {
+          "description": "",
+          "example": "",
+          "name": "Luotettavuusluokka, selite",
+          "teklaSource": ""
+        },
+        {
+          "description": "Suunniteltu käyttöikä vuosina. Ei välttämättä rakennuskohtainen, esim. runko voidaan mitoittaa pidemmälle ajalle.",
+          "example": "",
+          "name": "Käyttöikä",
+          "teklaSource": "LIFE_EXP_YEARS_1"
+        },
+        {
+          "description": "Suunniteltu käyttöikä vuosina",
+          "example": "",
+          "name": "Käyttöikä, ulkokuori",
+          "teklaSource": "LIFE_EXP_YEARS_2"
+        },
+        {
+          "description": "Tämä on valinnainen sitä varten, että hankintoja tekevät tahot haluavat malliin tiedon mihin hankintapaketteihin rakenteet kuuluvat.",
+          "example": "",
+          "name": "Hankinta-ID",
+          "teklaSource": "PROCUREMENT_ID"
+        },
+        {
+          "description": "Tieto valinnainen (erikseen tilattava), jos RAK-malliin halutaan.",
+          "example": "",
+          "name": "Talo 2000 nimike",
+          "teklaSource": "TALO2000_CODE"
+        },
+        {
+          "description": "Paalut numeroidaan usein eri tavalla kuin muut elementit",
+          "example": "",
+          "name": "Paalunumero",
+          "teklaSource": "PILE_NUMBER"
+        },
+        {
+          "description": "Tieto valutarvikkeen tilaamiseksi",
+          "example": "PLA24",
+          "name": "Tilaustieto",
+          "teklaSource": "CUSTOM.EMBED.ORDER_INFO"
+        },
+        {
+          "description": "Tuotekuvaus on osa tilaustietoa",
+          "example": "",
+          "name": "Tuotekuvaus",
+          "teklaSource": "CUSTOM.EMBED.PRODUCT_DESCR"
+        },
+        {
+          "description": "Tuotekoodi voi olla tarvikkeiden tilaamisessa tarvittava tieto",
+          "example": "",
+          "name": "Tuotekoodi",
+          "teklaSource": "CUSTOM.EMBED.PRODUCT_CODE"
+        }
+      ]
+    },
+    {
+      "name": "BETK-Hankinta",
+      "properties": [
+        {
+          "description": "Elementin tyyppi, perustuen teollisuuden tyypitykseen: elementtisuunnittelu.fi\nTieto sisältää elementtityypin koodin ja kuvauksen",
+          "example": "JK - Jännebetonipalkki (muut profiilit)",
+          "name": "Elementin tyyppi",
+          "teklaSource": "CUSTOM.ELEMENT_TYPE"
+        },
+        {
+          "description": "Elementin tyypin koodiosa, arvo MUU voi olla useammalla erityyppisellä elementillä, jolloin kuvaus kertoo enemmän",
+          "example": "JK",
+          "name": "Elementin tyyppi, koodi",
+          "teklaSource": "CUSTOM.ELEMENT_TYPE.CODE"
+        },
+        {
+          "description": "Elementin tyypin kuvausosa",
+          "example": "Jännebetonipalkki (muut profiilit)",
+          "name": "Elementin tyyppi, kuvaus",
+          "teklaSource": "CUSTOM.ELEMENT_TYPE.DESCRIPTION"
+        },
+        {
+          "description": "Mallikohtainen tyypitys raudoitukselle, selitetty tietomalliselosteessa",
+          "example": "R1",
+          "name": "Raudoitus 1, koodi",
+          "teklaSource": "REINF_CODE_1"
+        },
+        {
+          "description": "Mallikohtainen raudoituksen tyypityksen tekstimuotoinen kuvaus",
+          "example": "UK:#8-200 +2T10YMP",
+          "name": "Raudoitus 1, kuvaus",
+          "teklaSource": "REINF_DESCR_1"
+        },
+        {
+          "description": "Mallikohtainen tyypitys raudoitukselle, selitetty tietomalliselosteessa",
+          "example": "R2",
+          "name": "Raudoitus 2, koodi",
+          "teklaSource": "REINF_CODE_2"
+        },
+        {
+          "description": "Mallikohtainen raudoituksen tyypityksen tekstimuotoinen kuvaus",
+          "example": "SK:#8-200 MP + 2T12 YMP",
+          "name": "Raudoitus 2, kuvaus",
+          "teklaSource": "REINF_DESCR_2"
+        },
+        {
+          "description": "Mallikohtainen tyypitys pintakäsittelylle",
+          "example": "PK1",
+          "name": "Pintakäsittely 1, koodi",
+          "teklaSource": "SURF_CODE_1"
+        },
+        {
+          "description": "Pintakäsittelyn sanallinen kuvaus",
+          "example": "02 Valkoinen väribetonipinta",
+          "name": "Pintakäsittely 1, kuvaus",
+          "teklaSource": "SURF_DESCR_1"
+        },
+        {
+          "description": "Mallikohtainen tyypitys pintakäsittelylle",
+          "example": "PK2",
+          "name": "Pintakäsittely 2, koodi",
+          "teklaSource": "SURF_CODE_2"
+        },
+        {
+          "description": "Pintakäsittelyn sanallinen kuvaus",
+          "example": "04 Hienopesty pinta",
+          "name": "Pintakäsittely 2, kuvaus",
+          "teklaSource": "SURF_DESCR_2"
+        },
+        {
+          "description": "Mallikohtainen tyypitys pintakäsittelylle",
+          "example": "PK3",
+          "name": "Pintakäsittely 3, koodi",
+          "teklaSource": "SURF_CODE_3"
+        },
+        {
+          "description": "Pintakäsittelyn sanallinen kuvaus",
+          "example": "08 Uritettu pinta",
+          "name": "Pintakäsittely 3, kuvaus",
+          "teklaSource": "SURF_DESCR_3"
+        },
+        {
+          "description": "Mallikohtainen tyypitys hiertopinnoille",
+          "example": "HP1",
+          "name": "Hiertopinta 1, koodi",
+          "teklaSource": "RUB_SURF_CODE_1"
+        },
+        {
+          "description": "Hiertopinnan käsittelyn sanallinen kuvaus",
+          "example": "03 Puuhierretty pinta",
+          "name": "Hiertopinta 1, kuvaus",
+          "teklaSource": "RUB_SURF_DESCR_1"
+        },
+        {
+          "description": "Mallikohtainen tyypitys hiertopinnoille",
+          "example": "HP2",
+          "name": "Hiertopinta 2, koodi",
+          "teklaSource": "RUB_SURF_CODE_2"
+        },
+        {
+          "description": "Hiertopinnan käsittelyn sanallinen kuvaus",
+          "example": "04 Telattu pinta",
+          "name": "Hiertopinta 2, kuvaus",
+          "teklaSource": "RUB_SURF_DESCR_2"
+        },
+        {
+          "description": "",
+          "example": "Kyllä",
+          "name": "Onko vähähiilinen",
+          "teklaSource": "IS_LOW_CARBON"
+        },
+        {
+          "description": "Vähähiilisyyteen liittyvä sanallinen kuvaus",
+          "example": "Pyydetään toimittajalta vaihtoehtoja",
+          "name": "Vähähiilisyys, kuvaus",
+          "teklaSource": "LOW_CARBON_DESCR"
+        },
+        {
+          "description": "Tyyppielementti on jo hankintoja palvelevassa suunnitteluvaiheessa detaljoitu ja siitä on tehty esimerkkipiirustus",
+          "example": "Kyllä",
+          "name": "Onko tyyppielementti",
+          "teklaSource": "IS_SAMPLE_ELEMENT"
+        },
+        {
+          "description": "Tyyppipiirustuksen numero",
+          "example": "V-1001",
+          "name": "Tyyppipiirustus",
+          "teklaSource": "SAMPLE_DRAWING"
+        },
+        {
+          "description": "Rakennuksessa korkea elementti. Nostetaan maantiekuljetuksen kuormasta kääntäen se vaaka-asennosta pystyasentoon.",
+          "example": "Ei",
+          "name": "Onko kääntökivi",
+          "teklaSource": "IS_TURN_ELEMENT"
+        },
+        {
+          "description": "Kääntämistekniikan kuvaus tai rajoitukset",
+          "example": "Kääntö sallittu kahta nosturin vaijeria käyttäen tai teräshäkissä",
+          "name": "Käännön kuvaus",
+          "teklaSource": "TURN_DESCR"
+        }
+      ]
+    },
+    {
+      "name": "BETK-Määrät ja geometria",
+      "properties": [
+        {
+          "description": "",
+          "example": "",
+          "name": "Poikkileikkaus, pääosa",
+          "teklaSource": "MAINPART.PROFILE"
+        },
+        {
+          "description": "",
+          "example": "",
+          "name": "Poikkileikkaustyyppi",
+          "teklaSource": "CUSTOM.CROSS_SECTION_TYPE"
+        },
+        {
+          "description": "Kokoonpanon pituus kaikki osat mukaan lukien",
+          "example": "5200",
+          "name": "Pituus",
+          "teklaSource": "LENGTH"
+        },
+        {
+          "description": "Kokoonpanon korkeus kaikki osat mukaan lukien",
+          "example": "2850",
+          "name": "Korkeus",
+          "teklaSource": "HEIGHT"
+        },
+        {
+          "description": "Kokoonpanon leveys kaikki osat mukaan lukien",
+          "example": "480",
+          "name": "Leveys",
+          "teklaSource": "WIDTH"
+        },
+        {
+          "description": "Kokoonpanon pituus pelkistä betoniosista mitattuna.",
+          "example": "5200",
+          "name": "Pituus, betoniosat",
+          "teklaSource": "CAST_UNIT_LENGTH_ONLY_CONCRETE_PARTS"
+        },
+        {
+          "description": "Kokoonpanon korkeus pelkistä betoniosista mitattuna.",
+          "example": "2850",
+          "name": "Korkeus, betoniosat",
+          "teklaSource": "CAST_UNIT_HEIGHT_ONLY_CONCRETE_PARTS"
+        },
+        {
+          "description": "Kokoonpanon leveys pelkistä betoniosista mitattuna.",
+          "example": "480",
+          "name": "Leveys, betoniosat",
+          "teklaSource": "CAST_UNIT_WIDTH_ONLY_CONCRETE_PARTS"
+        },
+        {
+          "description": "Kokoonpanon pituus kaikki osat ja myös raudoitus huomioon ottaen.",
+          "example": "5200",
+          "name": "Pituus, kokonais",
+          "teklaSource": "CAST_UNIT_LENGTH_TOTAL"
+        },
+        {
+          "description": "Kokoonpanon korkeus kaikki osat ja myös raudoitus huomioon ottaen.",
+          "example": "2850",
+          "name": "Korkeus, kokonais",
+          "teklaSource": "CAST_UNIT_HEIGHT_TOTAL"
+        },
+        {
+          "description": "Kokoonpanon leveys kaikki osat ja myös raudoitus huomioon ottaen.",
+          "example": "480",
+          "name": "Leveys, kokonais",
+          "teklaSource": "CAST_UNIT_WIDTH_TOTAL"
+        },
+        {
+          "description": "",
+          "example": "",
+          "name": "Tilavuus, betoniosat",
+          "teklaSource": "VOLUME_NET_ONLY_CONCRETE_PARTS"
+        },
+        {
+          "description": "",
+          "example": "2500",
+          "name": "Massa",
+          "teklaSource": "CUSTOM.ELEMENT_WEIGHT"
+        },
+        {
+          "description": "",
+          "example": "240",
+          "name": "Massa, raudoitus",
+          "teklaSource": "CAST_UNIT_REBAR_WEIGHT"
+        },
+        {
+          "description": "",
+          "example": "",
+          "name": "Raudoitusarvio",
+          "teklaSource": "REBAR_ESTIMATE"
+        },
+        {
+          "description": "Elementin pinta-ala ilman aukkovähennyksiä",
+          "example": "18.2",
+          "name": "Pinta-ala, brutto",
+          "teklaSource": "CUSTOM.WALL_GROSS_AREA"
+        },
+        {
+          "description": "Elementin pinta-ala aukot vähennettyinä",
+          "example": "12.4",
+          "name": "Pinta-ala, netto",
+          "teklaSource": "CUSTOM.WALL_NET_AREA"
+        },
+        {
+          "description": "Rakennuksen nurkalla julkisivuelementin ulkokuori voi kääntyä toisen seinän suuntaiseksi. Tässä kääntyvän osan pinta-ala.",
+          "example": "1.5",
+          "name": "Pinta-ala, pieli",
+          "teklaSource": "CUSTOM.WALL_CORNER_AREA"
+        },
+        {
+          "description": "Elementin aukkojen pinta-ala",
+          "example": "5.799999999999999",
+          "name": "Pinta-ala, aukot",
+          "teklaSource": "CUSTOM.WALL_OPENINGS_AREA"
+        },
+        {
+          "description": "Elementin aukkojen lukumäärä",
+          "example": "1",
+          "name": "Lukumäärä, aukot",
+          "teklaSource": "CUSTOM.WALL_OPENINGS_N"
+        },
+        {
+          "description": "Palkkielementin uuman paksuus",
+          "example": "380",
+          "name": "Paksuus, uuma",
+          "teklaSource": "CUSTOM.WEB_THICKNESS"
+        },
+        {
+          "description": "Leuan korkeus. Kun rakennekorkeus halutaan matalaksi, ontelo- tai kuorilaattojen päät tukeutuvat betonipalkin leukojen päälle.",
+          "example": "150",
+          "name": "Korkeus, leuka 1",
+          "teklaSource": "CUSTOM.BOTTOM_FLANGE_THICKNESS_1"
+        },
+        {
+          "description": "Leuan korkeus. Kun rakennekorkeus halutaan matalaksi, ontelo- tai kuorilaattojen päät tukeutuvat betonipalkin leukojen päälle.",
+          "example": "150",
+          "name": "Korkeus, leuka 2",
+          "teklaSource": "CUSTOM.BOTTOM_FLANGE_THICKNESS_2"
+        },
+        {
+          "description": "",
+          "example": "145",
+          "name": "Leveys, ripa",
+          "teklaSource": "CUSTOM.RIB_WIDTH"
+        },
+        {
+          "description": "Pitkät palkit voidaan valmistaa sen verran ylöspäin kaarevina, että eivät \"roiku\" oman painon kuormasta. Myös ns. optinen esikorotus voi olla tarpeen.",
+          "example": "30",
+          "name": "Esikorotus",
+          "teklaSource": "PRECAMBERING"
+        },
+        {
+          "description": "Sisäkuoren peruspaksuus ilman konsoleita tai muita pieniä paksunnoksia.",
+          "example": "150",
+          "name": "Paksuus, sisäkuori",
+          "teklaSource": "CUSTOM.INNER_PANEL_THICKNESS"
+        },
+        {
+          "description": "Sisäkuoren tilavuus",
+          "example": "2.6999999999999997",
+          "name": "Tilavuus, sisäkuori",
+          "teklaSource": "CUSTOM.INNER_PANEL_VOLUME"
+        },
+        {
+          "description": "Eristeen paksuus",
+          "example": "220",
+          "name": "Paksuus, eriste",
+          "teklaSource": "CUSTOM.INSULATION_THICKNESS"
+        },
+        {
+          "description": "Ulkokuoren peruspaksuus ilman konsoleita tai muita pieniä paksunnoksia.",
+          "example": "80",
+          "name": "Paksuus, ulkokuori",
+          "teklaSource": "CUSTOM.OUTER_PANEL_THICKNESS"
+        },
+        {
+          "description": "Ulkokuoren tilavuus",
+          "example": "2.6999999999999997",
+          "name": "Tilavuus, ulkokuori",
+          "teklaSource": "CUSTOM.OUTER_PANEL_VOLUME"
+        },
+        {
+          "description": "Tämä palauttaa arvon, jos pintakäsittelyt on mallinnettu surface treatment -objekteina. Pinta-alaltaan suurimman pintakäsittelyn pinta-ala",
+          "example": "12",
+          "name": "Pinta-ala, pintakäsittely 1",
+          "teklaSource": "CUSTOM.SURFACE_TREATMENT_AREA_1"
+        },
+        {
+          "description": "Tämä palauttaa arvon, jos pintakäsittelyt on mallinnettu surface treatment -objekteina.",
+          "example": "12",
+          "name": "Pinta-ala, pintakäsittely 2",
+          "teklaSource": "CUSTOM.SURFACE_TREATMENT_AREA_2"
+        },
+        {
+          "description": "Tämä palauttaa arvon, jos pintakäsittelyt on mallinnettu surface treatment -objekteina.",
+          "example": "12",
+          "name": "Pinta-ala, pintakäsittely 3",
+          "teklaSource": "CUSTOM.SURFACE_TREATMENT_AREA_3"
+        },
+        {
+          "description": "Ontelolaattojen aukkojen toteutustavasta johtuen kustannusvaikutus perustuu reunapituuteen.",
+          "example": "6.5",
+          "name": "Pituus, aukkojen reunat",
+          "teklaSource": "CUSTOM.HC_OPENINGS_L"
+        },
+        {
+          "description": "Ontelolaattojen syvennysten toteutustavasta johtuen kustannusvaikutus perustuu reunapituuteen.",
+          "example": "5.4",
+          "name": "Pituus, syvennysten reunat",
+          "teklaSource": "CUSTOM.HC_RECESSES_L"
+        },
+        {
+          "description": "Ontelolaatta voidaan sahata ontelon kohdalta pituussuuntaisesti halki. Kustannusvaikutus määräytyy sahauspituuden perusteella.",
+          "example": "9600",
+          "name": "Pituus, laatan kavennus",
+          "teklaSource": "CUSTOM.HC_SAWINGS_SIDE"
+        },
+        {
+          "description": "",
+          "example": "2",
+          "name": "Lukumäärä, vinopäiden sahaus",
+          "teklaSource": "CUSTOM.HC_SAWINGS_END_N"
+        },
+        {
+          "description": "Ontelolaatan bruttoala lasketaan kaventamattoman laatan leveyden ja pituuden tulona.",
+          "example": "12",
+          "name": "Pinta-ala, brutto",
+          "teklaSource": "CUSTOM.HC_GROSS_AREA"
+        },
+        {
+          "description": "Kavennetun ontelolaatan pinta-ala",
+          "example": "8",
+          "name": "Pinta-ala, netto",
+          "teklaSource": "AREA_PROJECTION_XZ_NET\nCUSTOM.HC_NET_AREA"
+        },
+        {
+          "description": "",
+          "example": "180",
+          "name": "Paksuus, eriste",
+          "teklaSource": "CUSTOM.SLAB_INSULATION_THICKNESS"
+        },
+        {
+          "description": "Jos laatan pää ei ole kohtisuora, se sisältää leikkauksia tai lisättyjä osia tai raudoitusta tai valutarvikkeita, se on detaljoitu ja edellyttää bulkkituotteeseen verrattuna tekemistä tehtaalla.",
+          "example": "TRUE",
+          "name": "Onko detaljoitu",
+          "teklaSource": "CUSTOM.IS_DETAILED_SLAB"
+        },
+        {
+          "description": "Tilattava määrä kappaleina, metreinä tai neliömetreinä",
+          "example": "4",
+          "name": "Määrä",
+          "teklaSource": "CUSTOM.EMBED.QUANTITY"
+        },
+        {
+          "description": "Valutarvikkeen yksikkö voi olla kpl, m tai m²",
+          "example": "kpl",
+          "name": "Yksikkö",
+          "teklaSource": "CUSTOM.EMBED.UNIT"
+        },
+        {
+          "description": "Tämä palauttaa arvon, jos pintakäsittelyt on mallinnettu surface treatment -objekteina. Pinta-alaltaan suurimman pintakäsittelyn nimi.",
+          "example": "TIILILAATTA",
+          "name": "Pintakäsittely 1",
+          "teklaSource": "CUSTOM.SURFACE_TREATMENT_NAME_1"
+        },
+        {
+          "description": "Tämä palauttaa arvon, jos pintakäsittelyt on mallinnettu surface treatment -objekteina.",
+          "example": "TIILILAATTA",
+          "name": "Pintakäsittely 2",
+          "teklaSource": "CUSTOM.SURFACE_TREATMENT_NAME_2"
+        },
+        {
+          "description": "Tämä palauttaa arvon, jos pintakäsittelyt on mallinnettu surface treatment -objekteina.",
+          "example": "TIILILAATTA",
+          "name": "Pintakäsittely 3",
+          "teklaSource": "CUSTOM.SURFACE_TREATMENT_NAME_3"
+        }
+      ]
+    },
+    {
+      "name": "BETK-Sijainti",
+      "properties": [
+        {
+          "description": "IfcBuilding:n nimi",
+          "example": "As Oy Kihveli",
+          "name": "Rakennus",
+          "teklaSource": "CUSTOM.BUILDING | CUSTOM.EMBED.BUILDING"
+        },
+        {
+          "description": "IfcBuilding:n (partial building) nimi",
+          "example": "A",
+          "name": "Lohko",
+          "teklaSource": "CUSTOM.SECTION | CUSTOM.EMBED.SECTION"
+        },
+        {
+          "description": "IfcBuildingStorey:n nimi",
+          "example": "K1",
+          "name": "Kerros",
+          "teklaSource": "CUSTOM.FLOOR | CUSTOM.EMBED.FLOOR"
+        },
+        {
+          "description": "Mallin sijainti määritelty Base pointilla",
+          "example": "24500000",
+          "name": "Painopiste, ETRS-GK, itäkoordinaatti",
+          "teklaSource": "CUSTOM.ASSEMBLY.CENTER_OF_GRAVITY.PROJECT_BASEPOINT.EAST"
+        },
+        {
+          "description": "Mallin sijainti määritelty Base pointilla",
+          "example": "6700000",
+          "name": "Painopiste, ETRS-GK, pohjoiskoordinaatti",
+          "teklaSource": "CUSTOM.ASSEMBLY.CENTER_OF_GRAVITY.PROJECT_BASEPOINT.NORTH"
+        },
+        {
+          "description": "Muunnetaan ETRS-GK -koordinaateista",
+          "example": "",
+          "name": "Painopiste, WGS84, leveysaste",
+          "teklaSource": "CUSTOM.ASSEMBLY.CENTER_OF_GRAVITY.LATITUDE.IN_RADIANS"
+        },
+        {
+          "description": "Muunnetaan ETRS-GK -koordinaateista",
+          "example": "",
+          "name": "Painopiste, WGS84, pituusaste",
+          "teklaSource": "CUSTOM.ASSEMBLY.CENTER_OF_GRAVITY.LONGITUDE.IN_RADIANS"
+        },
+        {
+          "description": "Elementin tai paikallavalurakenteen tunnus, johon valutarvike kuuluu",
+          "example": "V-1001",
+          "name": "Kuuluu",
+          "teklaSource": "CUSTOM.EMBED.BELONGS_TO"
+        },
+        {
+          "description": "",
+          "example": "ELEMENTTI",
+          "name": "Tyyppi",
+          "teklaSource": "CUSTOM.EMBED.TYPE"
+        },
+        {
+          "description": "",
+          "example": "89200",
+          "name": "Korko, alapinta",
+          "teklaSource": "ASSEMBLY_BOTTOM_LEVEL_UNFORMATTED_PROJECT"
+        },
+        {
+          "description": "",
+          "example": "93000",
+          "name": "Korko, yläpinta",
+          "teklaSource": "ASSEMBLY_TOP_LEVEL_UNFORMATTED_PROJECT"
+        },
+        {
+          "description": "",
+          "example": "89500",
+          "name": "Korko, pääosa, alapinta",
+          "teklaSource": "MAINPART.BOTTOM_LEVEL_UNFORMATTED_PROJECT"
+        },
+        {
+          "description": "",
+          "example": "92500",
+          "name": "Korko, pääosa, yläpinta",
+          "teklaSource": "MAINPART.TOP_LEVEL_UNFORMATTED_PROJECT"
+        }
+      ]
+    },
+    {
+      "name": "BETK-Materiaali",
+      "properties": [
+        {
+          "description": "",
+          "example": "",
+          "name": "Materiaali",
+          "teklaSource": "CUSTOM.MATERIAL_TYPE"
+        },
+        {
+          "description": "",
+          "example": "",
+          "name": "Pääosan materiaali",
+          "teklaSource": "CUSTOM.MAINPART.MATERIAL_TYPE"
+        },
+        {
+          "description": "Sisäkuoren betoniluokka/-lujuus",
+          "example": "C30/37",
+          "name": "Lujuus, sisäkuori",
+          "teklaSource": "CUSTOM.INNER_PANEL_MATERIAL"
+        },
+        {
+          "description": "Eristeen materiaali",
+          "example": "",
+          "name": "Materiaali, eriste",
+          "teklaSource": "CUSTOM.INSULATION_MATERIAL"
+        },
+        {
+          "description": "Alapohjalaatan alapintaan liimatun eristeen materiaali",
+          "example": "PUR",
+          "name": "Materiaali, eriste",
+          "teklaSource": "CUSTOM.SLAB_INSULATION_MATERIAL"
+        },
+        {
+          "description": "Ulkokuoren betoniluokka/-lujuus",
+          "example": "C30/37",
+          "name": "Lujuus, ulkokuori",
+          "teklaSource": "CUSTOM.OUTER_PANEL_MATERIAL"
+        }
+      ]
+    }
+  ]
+}
